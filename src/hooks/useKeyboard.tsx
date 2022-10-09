@@ -34,13 +34,13 @@ const useKeyboard = () => {
     texture1: false,
     texture2: false,
     texture3: false,
-  });
+  }) as any;
 
   const createAction = useCallback((setActionTo: Boolean) => {
     return (event: KeyboardEvent) => {
       const action: any = actionKeys[event.code];
       if (action) {
-        setActions((actions) => ({ ...actions, [action]: setActionTo }));
+        setActions((actions: any) => ({ ...actions, [action]: setActionTo }));
       }
     };
   }, []);
@@ -56,6 +56,8 @@ const useKeyboard = () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
   }, [handleKeyDown, handleKeyUp]);
+
+  return actions;
 };
 
 export default useKeyboard;

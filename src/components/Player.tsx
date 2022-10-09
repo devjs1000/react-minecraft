@@ -2,8 +2,10 @@ import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { Vector3 } from "three";
+import useKeyboard from "../hooks/useKeyboard";
 
 const Player = () => {
+  const actions = useKeyboard();
   const { camera } = useThree();
   const [ref, api] = useSphere(() => ({
     mass: 1,
@@ -25,7 +27,6 @@ const Player = () => {
   useFrame(() => {
     const [x, y, z] = position.current;
     camera.position.copy(new Vector3(x, y, z));
-    api.velocity.set(0, 1, 0);
   });
   return <mesh ref={ref}></mesh>;
 };

@@ -15,6 +15,7 @@ const Cursor = () => {
         fontWeight: "bolder",
         fontSize: "20px",
         textAlign: "center",
+        userSelect: "none",
       }}
     >
       +

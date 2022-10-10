@@ -5,6 +5,7 @@ import Ground from "./components/Ground";
 import Player from "./components/Player";
 import FirstPersonView from "./components/FirstPersonView";
 import Cursor from "./components/Cursor";
+import Cubes from "./components/Cubes";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <FirstPersonView />
         <Physics>
           <Player />
+          <Cubes />
           <Ground />
         </Physics>
       </Canvas>

@@ -19,9 +19,9 @@ const actionKeys = {
   KeyL: "light",
   KeyH: "health",
   KeyT: "chat",
-  Digit1: "texture1",
-  Digit2: "texture2",
-  Digit3: "texture3",
+  Digit1: "wood",
+  Digit2: "whiteWood",
+  Digit3: "grass",
 } as any;
 
 const useKeyboard = () => {

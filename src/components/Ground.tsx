@@ -1,6 +1,6 @@
 import React from "react";
 import { usePlane } from "@react-three/cannon";
-import { grassTexture } from "../images/texture";
+import { grassTexture } from "../images/textures";
 import { RepeatWrapping, NearestFilter } from "three";
 
 const Ground = () => {

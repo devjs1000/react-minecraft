@@ -8,3 +8,24 @@ canvas {
   width: 100vw;
   background-color: white;
 }
+
+
+.active{
+  border:solid 5px black;
+}
+
+.selector{
+  background-color: rgba(216, 212, 212, 0.5);
+  height: 100px;
+  width: 800px;
+  position: absolute;
+  bottom: 10px; 
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  overflow: auto;
+}
+.selector img {
+  height: 100%;
+  width: auto;
+}

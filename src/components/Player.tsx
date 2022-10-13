@@ -3,6 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import useKeyboard from "../hooks/useKeyboard";
+import { useStore } from "../hooks/useStore";
 
 const TRAVEL = 1;
 const JUMP = 5;
@@ -10,6 +11,10 @@ const JUMP = 5;
 const Player = () => {
   const actions = useKeyboard();
   const { camera } = useThree();
+  const [selectedTexture, setSelectedTexture] = useStore((state: any) => [
+    state.selectedTexture,
+    state.setSelectedTexture,
+  ]);
   const [ref, api] = useSphere(() => ({
     mass: 1,
     position: [0, 1, 0],
@@ -44,12 +49,12 @@ const Player = () => {
       0,
       0,
       Number(!!moveBackward) - Number(!!moveForward)
-    )
+    );
     const sideVector = new Vector3(
       Number(!!moveLeft) - Number(!!moveRight),
       0,
       0
-    )
+    );
 
     direction
       .subVectors(frontVector, sideVector)
@@ -74,6 +79,7 @@ const Player = () => {
     movement("jump", () => {
       set(0, JUMP, 0);
     });
+    
   });
 
   return <mesh ref={ref}></mesh>;

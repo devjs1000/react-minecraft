@@ -17,7 +17,7 @@ const Ground = () => {
 
   const handleClick = (e: any) => {
     e.stopPropagation();
-    const [x, y, z] = e.point.toArray().map((a: number) => Math.round(a));
+    const [x, y, z] = e.point.toArray().map((a: number) => Math.floor(a));
     addCube(x, y+1, z);
   };
   return (
